@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+//components
+
+import Greeting from './components/Greeting';
+
 function App() {
   return (
     <div className="App">
@@ -17,6 +21,9 @@ function App() {
         >
           Learn React
         </a>
+        <Greeting name="JAIRO"/>
+        <Greeting name="ODON"/>
+        <Greeting name="AURO"/>
       </header>
     </div>
   );
