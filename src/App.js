@@ -1,32 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
-//components
-
-import Greeting from './components/Greeting';
+// Components
+import Counter from "./components/Counter";
+import NavBar from "./components/NavBar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Greeting name="JAIRO"/>
-        <Greeting name="ODON"/>
-        <Greeting name="AURO"/>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<header className="App-header">
+				<img src={logo} className="App-logo" alt="logo" />
+				<Counter />
+				<NavBar />
+			</header>
+		</div>
+	);
 }
 
 export default App;
