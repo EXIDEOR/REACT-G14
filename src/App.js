@@ -4,6 +4,7 @@ import './App.css';
 //components
 
 import Greeting from './components/Greeting';
+import Calculator from "./components/Calculator";
 
 function App() {
   return (
