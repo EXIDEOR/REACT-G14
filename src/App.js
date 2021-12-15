@@ -1,54 +1,38 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useEffect, useState } from "react";
 
-//components
-import UserName from "./components/UserName";
+// Components
+import Character from "./components/Character";
 
-const _users = [
-  {
-    id: 1,
-    firstName: "Auro",
-    lastName: "Escalera",
-  },
-  {
-    id: 2,
-    firstName: "Jairo",
-    lastName: "Roscano",
-  },
-  {
-    id: 3,
-    firstName: "Odon",
-    lastName: "Balán",
-  },
-];
+// Services
+import { listCharacters } from "./Services/characters.js";
 
 function App() {
-  const [users, setUsers] = useState([]);
+  const [characters, setCharacters] = useState([]);
+  const [data, setData] = useState({});
 
   useEffect(() => {
-    // await fetch()
-    const getUsers = async () => {
-      const response = await fetch("users.json");
-      console.table(response);
-      const data = await response.json();
-      console.log(data);
-      setUsers(data);
+    const list = async () => {
+      const { results, info } = await listCharacters();
+      setCharacters(results);
+      setData(info);
     };
-
-    getUsers();
+    list();
   }, []);
-  const usersUI = users.map(({ id, firstName, lastName }) => (
-    <userName key={id} firstName={firstName} lastName={lastName} />
-  ));
+
+  console.log(data);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {usersUI}
-      </header>
-      <UserName firstName={"Map"} lastName={"Out"} />
+      {characters.map(({ id, image, name, species, status }) => (
+        <Character
+          key={id}
+          image={image}
+          name={name}
+          species={species}
+          status={status}
+        />
+      ))}
     </div>
   );
 }
