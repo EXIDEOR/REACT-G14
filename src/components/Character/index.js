@@ -1,3 +1,4 @@
+//paso 7 hacemos el componente para guardar los datos de los personajes.
 import React from "react";
 
 function Character({ image, name, species, status }) {
