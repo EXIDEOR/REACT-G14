@@ -1,8 +1,11 @@
 import "./App.css";
-import { useState } from "react";
 
 function App() {
-  return <div className="container"> ୧☉□☉୨ </div>;
+  return (
+    <div className="container">
+      <h1 className="h1"> ୧☉□☉୨ </h1>
+    </div>
+  );
 }
 
 export default App;

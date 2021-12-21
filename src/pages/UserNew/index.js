@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react/cjs/react.development";
 
 //services
-import { createuser } from "../../services/user";
+import { createUser } from "../../services/users";
 
 //css
 import "./UserNew.css";
@@ -53,7 +53,7 @@ function UserNew() {
     event.preventDefault();
     console.log(gender);
     try {
-      await createuser({
+      await createUser({
         firstName,
         lastName,
         gender,
@@ -67,11 +67,11 @@ function UserNew() {
 
   return (
     <div className="container form-col">
-      <h1>Crea un usuario</h1>
+      <h1>Create User</h1>
       <form onSubmit={handleSubmit}>
         <Input
           id={"firstName"}
-          label={"firstName"}
+          label={"FirstName"}
           value={firstName}
           setValue={setFirstName}
         />

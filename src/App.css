@@ -73,8 +73,11 @@
 	background-color: #282c34;
 }
 
-.flex {
+.h1 {
+	color: #61dafb;
 }
+
+
 
 .form {
 	display: flex;

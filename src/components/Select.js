@@ -6,7 +6,7 @@ function Select({ value, setValue, options, label }) {
       <label htmlFor={value}>{label}</label>
       <select value={value} onChange={(e) => setValue(e.target.value)}>
         <option value="none" selected="selected" hidden>
-          Elige:
+          Select:
         </option>
         {options.map(({ opValue, opText }, index) => {
           return (

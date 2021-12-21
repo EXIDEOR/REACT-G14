@@ -9,7 +9,7 @@ function Input({ id, value, setValue, label, type = "text" }) {
         id={id}
         onChange={(e) => setValue(e.target.value)}
         value={value}
-        placeholder={`Tipear ${label}`}
+        placeholder={`Type ${label}`}
       />
     </div>
   );
